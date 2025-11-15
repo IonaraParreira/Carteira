@@ -22,14 +22,16 @@
     </style>
 </head>
 <body>
-    <p id= "wallet-display">Carteira: <R1>R$ 10</R1></p>
-<button onclick="addReal()">Somar <R1>R$ 1</R1></button>
+    <p id= "wallet-display">Carteira: R$ 10</p>
+<button onclick="addReal()">Somar R$ 1</button>
 <button onclick="removeReal()">Subtrair <R1>R$ 1</R1></button>
 
 <script>
 let wallet = 10;
 const walletElement = document.getElementById('wallet-display');
 
+//Esta função é chamada para reverter o saldo insuficiente
+// mostra o valor numérico novamente
 function updateDisplay() {
     walletElement.textContent = "Carteira: R$" + wallet;
 }
@@ -41,8 +43,12 @@ function addReal(){
 
 function removeReal(){
     if(wallet > 0){
+        //se o saldo for maior 0:
         wallet -= 1;
         updateDisplay(); //Atualiza o texto exibido
+    }else{
+        //senão(se o saldo for 0 ou menor):
+        walletElement.textContent = "Saldo insuficiente!";
     }
 }
 </script>
