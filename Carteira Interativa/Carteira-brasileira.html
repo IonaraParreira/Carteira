@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteira Interativa</title>
+    <style>
+        #wallet-display {
+            font-weight:bold;
+
+            font-size: 30px;
+          
+        }
+        button{
+            background-color: rgb(125, 33, 211);
+            color:beige;
+            border-radius:5px;
+            border:none;
+            font-size: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p id= "wallet-display">Carteira: <R1>R$ 10</R1></p>
+<button onclick="addReal()">Somar <R1>R$ 1</R1></button>
+<button onclick="removeReal()">Subtrair <R1>R$ 1</R1></button>
+
+<script>
+let wallet = 10;
+const walletElement = document.getElementById('wallet-display');
+
+function updateDisplay() {
+    walletElement.textContent = "Carteira: R$" + wallet;
+}
+
+function addReal(){
+    wallet += 1;
+    updateDisplay(); //Atualiza o texto exibido
+}
+
+function removeReal(){
+    if(wallet > 0){
+        wallet -= 1;
+        updateDisplay(); //Atualiza o texto exibido
+    }
+}
+</script>
+
+</body>
+</html>
