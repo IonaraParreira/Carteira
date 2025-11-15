@@ -1,2 +1,2 @@
 # Carteira
-Primeiro repositório versionaado
+Primeiro repositório versionado
